@@ -1,0 +1,10 @@
+<PlaneHTMLConfig>
+	<Instrument>
+		<Name>AS530</Name>
+		<NavIndex>1</NavIndex>
+		<ComIndex>1</ComIndex>
+		<Electric>
+            <Simvar name="CIRCUIT ON:31" unit="Boolean"/>
+        </Electric>
+	</Instrument> 
+</PlaneHTMLConfig>
