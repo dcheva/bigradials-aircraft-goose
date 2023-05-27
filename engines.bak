@@ -1,0 +1,200 @@
+;   <------------------------------------------------------------>
+;   |                                                            |
+;   |                  BigRadials Grumman-Goose                  |
+;   |      Copyright © BigRadials 2022 - All Rights Reserved     |
+;   |                                                            |
+;   <------------------------------------------------------------>
+
+[VERSION]
+major =2
+minor =0
+
+[GENERALENGINEDATA]
+engine_type =0
+Engine.0 = -3.475861, -6.283164, 4.721179
+ThrustAnglesPitchHeading.0 = 0, 0
+Engine.1 = -3.475861, 6.283164, 4.721179
+ThrustAnglesPitchHeading.1 = 0, 0
+min_throttle_limit =0
+master_ignition_switch =1
+starter_type =0
+requires_priming = 0 ; 0 ; If set to 1 (TRUE), the engine may need to be primed before combustion (depending on temperature). Set to 0 (FALSE) otherwise. Default is 1 (FALSE).
+min_fuel_press_for_combustion_psf = 0.01 ; The minimum fuel pressure required to get a combustion (in psf). Default is 0.01 (0.01/144 psi).
+fuel_flow_scalar =0.87
+max_contrail_temperature =-1
+accumulated_time_hobbs_min_pct_rpm =0
+accumulated_time_hobbs_min_knots =0
+
+
+[DISABLED_CONTROLS]
+DisableFuelValveControls=0
+DisableMixtureControls=0
+DisableParkingBrakeControls=0
+DisablePropellerControls=0
+DisableAutopilotControls=0
+
+
+[PISTON_ENGINE]
+power_scalar = 1
+cylinder_displacement = 109.444444
+compression_ratio = 6
+number_of_cylinders = 9
+max_rated_rpm = 2300
+min_required_rpm = 500
+max_rated_hp = 450
+min_cruise_rpm = 1200
+max_cruise_rpm = 2200
+max_indicated_rpm = 2860
+fuel_metering_type = 1
+cooling_type = 0
+normalized_starter_torque = 0.66 ; 0.042
+starter_time = 2 ;3.5
+turbocharged = 1
+max_design_mp = 38.5
+min_design_mp = 10 ; Min design manifold pressure, (inHg)
+critical_altitude= 12000
+emergency_boost_type = 0 ; 0=None, 1=Water Injection, 2=Methanol/Water injection, 3=War Emergency Power
+emergency_boost_mp_offset=0
+emergency_boost_gain_offset=0
+fuel_air_auto_mixture=0
+auto_ignition=0
+max_rpm_mechanical_efficiency_scalar= 1.0       //Scalar on maximum RPM mechanical efficiency
+idle_rpm_mechanical_efficiency_scalar= 1.0      //Scalar on idle RPM mechanical efficiency
+low_rpm_shake_scalar = 1.5
+max_rpm_friction_scalar = 1 ; Scalar on maximum RPM friction
+idle_rpm_friction_scalar = 1 ; Scalar on idle RPM friction
+;BestPowerSpecificFuelConsumption = 0.32694 ; SFC at Best Power mixture ratio
+BestPowerSpecificFuelConsumption = 1.0 ; SFC at Best Power mixture ratio
+egt_tuning_constant=1
+egt_peak_temperature=2100
+egt_tc=2
+cht_tuning_constant=1
+cht_cooling_constant=0.28; 0.65
+cht_heating_constant=960
+rpm_on_cht_table = 0.2:0.6, 0.9:1.0
+cht_tc=0.015
+cht_liquid_max_cooling=30
+oil_press_tuning_constant = 1
+oil_press_max = 12960 ; max oil pressure (psf)
+oil_press_tc = 0.8
+oil_temp_tuning_constant = 1.0
+oil_temp_cooling_constant = 0.18
+oil_temp_heating_constant = 743.67 ; max oil temperature degrees Rankine
+oil_temp_tc = 0.02
+oil_temp_to_oil_pressure_table = 0:0, 500:-1, 700:-600 ; Pressure differential (in psf) of the oil depending on its temperature (in K).
+oil_temp_factor_from_rpm=0.00:0.60, 500.00:0.80, 2300.00:1.00
+;oil_temp_factor_from_rpm = 0:0.5, 300:1.0, 2000:1.0 ;
+oil_coolant_flaps_effect = 0
+rpm_to_oil_pressure_table = 0:0, 0.1:0.3, 0.2:0.9, 0.519:1, 0.74:1
+radiator_temp_tuning_constant = 1
+radiator_temp_cooling_constant = 0.015
+radiator_temp_max = 689.67 ; max radiator temperature degrees Rankine
+radiator_temp_tc = 0.02
+fuel_press_tuning_constant=1
+fuel_press_max = 1440  ; max fuel pressure (psf) psf value = psi value x 144.
+fuel_press_tc=2.0
+rpm_to_fuel_pressure_table = 500.0:0.3, 1400.0:1.0, 2000.0:1.0
+number_of_magnetos=2
+two_stroke_cycle=0
+supercharged=0
+radiator_cooling_constant=0.015
+radiator_heating_constant=670
+radiator_tc=0.02
+radiator_tuning_constant=1
+magneto_order_left_right_both=1
+engine_mechanical_efficiency_table = 200.0:0.800, 550.0:0.55, 1800.0:0.62, 2000.0:0.630, 2200:0.73, 2300.0:0.750
+engine_friction_table = -300.000000:-41.00000, 550.000000:50.000000, 900.000000:56.000000,1800:72.00000,2000.00000:76.00000, 2200:89.00000, 2300.000000:92.000000
+manifold_pressure_regulator = 0
+manifold_pressure_regulator_threshold = 0
+manifold_pressure_regulator_tc = 0
+manifold_efficiency_table = 0:0.3427, 0.60:0.766, 0.67:0.805, 0.75:0.857, 1:0.975
+prop_lever_pos_to_oil_pressure_delta_table = 0:2160, 1:0 ; Delta in oil pressure when governor is taking over
+diesel=0
+induction_air_temp_tc=0.7
+carb_heat_delta_temp=55
+single_magneto_efficiency=0.92
+shaft_torque_tc=3
+recip_stop_arc_degrees=90
+recip_stop_arc_restitution=0.8
+recip_stop_arc_max_pct_rpm=0.04
+recip_stop_arc_friction_factor=2
+egt_factor_from_pct_power = 0:0.5, 0.5:0.894, 0.64:0.956, 0.75:0.98, 1:1 ; Gives the EGT temperature factor (to egt_peak_temperature) from the pct of power (HP/maxHP)
+egt_delta_from_mixture_ratio = 0.043:-100, 0.05:-89.7, 0.067:-50, 0.07:0, 0.075:-4.9, 0.083:-80, 0.108:-120.5
+emergency_boost_duration = 0.00000
+detonation_onset = 41.80000
+density_on_torque_table = 0.000225:0.100000, 0.000560:0.300000, 0.0009:0.5, 0.00125:0.72, 0.0016:1.000000, 0.002378:1.000000
+carb_icing_sensiblity=0.25
+
+[PROPELLER]
+;prop_mod_use_modern = 1
+;prop_mod_use_absorbed_torque = 1
+;prop_mod_aspect_ratio = 6
+;prop_mod_lift_slope_cf = 3
+;prop_mod_aoa_twist_delta_deg = 6
+;prop_mod_aoa_lift_delta_deg = 4
+;prop_mod_stall_aoa_scaler = 1.75
+;prop_mod_stall_aoa_power = 1
+;prop_mod_beta_def_at_ratio = 0.75
+;prop_mod_lift_efficiency_cf = 0.2
+;prop_mod_zero_lift_drag_cf = 0.02
+;prop_mod_reverse_left = 0
+;prop_mod_reverse_right = 0
+;prop_mod_reverse_centre = 0
+;prop_mod_ang_offset_left = 0
+;prop_mod_ang_offset_right = 0
+;prop_mod_ang_offset_centre = 90
+;prop_mod_moment_scalar_pitch = 1
+;prop_mod_moment_scalar_yaw = 1
+;prop_mod_moment_scalar_roll = 1
+prop_effmaxsmooth=1
+prop_effminval=0.1
+prop_scalepowerabs=1
+thrust_scalar=1
+prop_uselegacytables=0
+prop_falloffcoef=0.00045
+prop_falloffpower=8
+prop_lowbetareduction=0.03
+prop_lowbetareductionmid=1.4
+propeller_type=0
+propeller_diameter=8.5
+propeller_blades=2
+;propeller_moi=15.0875
+propeller_moi=40
+use_propeller_rpm=1
+beta_max=26
+beta_cruise=20
+power_propeller_absorbed_cf=1
+beta_min=10.5
+min_gov_rpm=800
+prop_tc=0.05
+prop_governor_d=100
+prop_governor_dboundary=100
+prop_governor_i=10
+prop_governor_iboundary=10
+prop_governor_p=100
+prop_cx_min=0.06
+prop_cx_at_cruise_beta=0.21
+advance_ratio_on_effective_beta=0.2
+prop_cx_parabol=1
+gear_reduction_ratio=1
+fixed_pitch_beta=0
+low_speed_theory_limit=0
+prop_sync_available=0
+prop_deice_available=0
+min_eng_rpm_engage_prop=-1
+prop_engage_tc=0
+prop_disengage_tc=0
+prop_feathering_available=1
+prop_auto_feathering_available=0
+min_n1_for_autofeather_armed=0
+max_n1_for_autofeather_actuated=0.1
+min_rpm_for_feather=1300
+beta_feather=80
+power_absorbed_cf=0.1
+defeathering_accumulators_available=1
+prop_reverse_available=0
+minimum_on_ground_beta=11
+minimum_reverse_beta=0
+prop_reverse_max_vel=2
+prop_efficiency_table=0.000000:0.000000:0.250000:0.500000:0.750000:1.000000:1.250000:1.500000:1.750000:2.000000:2.250000:2.500000:2.750000,10.000000:0.250000:0.450000:0.590000:0.720000:0.703750:0.583200:0.481400:0.385280:0.294250:0.214240:0.147460:0.088000,15.000000:0.250000:0.440000:0.570000:0.690000:0.800000:0.768000:0.640320:0.524160:0.419440:0.322400:0.239370:0.164000,20.000000:0.250000:0.428322:0.545000:0.660000:0.770000:0.870000:0.802720:0.670880:0.541420:0.437840:0.340370:0.255000,25.000000:0.250000:0.411142:0.520000:0.630000:0.740000:0.850000:0.931480:0.795200:0.662330:0.543920:0.436320:0.340000,30.000000:0.250000:0.392776:0.500000:0.610000:0.720000:0.830400:0.918720:0.921760:0.783240:0.665600:0.545400:0.441000,35.000000:0.250000:0.375359:0.480000:0.583000:0.685000:0.787200:0.876960:0.941920:0.918060:0.809120:0.689830:0.580000,40.000000:0.250000:0.358500:0.452000:0.544000:0.636000:0.727000:0.819000:0.909440:0.931970:0.917280:0.822140:0.720000,45.000000:0.250000:0.333000:0.410000:0.490000:0.569000:0.647000:0.725000:0.804860:0.863490:0.911040:0.897890:0.820000,50.000000:0.250000:0.310844:0.375000:0.435000:0.496000:0.558000:0.619000:0.680000:0.742000:0.805064:0.857490:0.889000,55.000000:0.250000:0.289049:0.341151:0.394522:0.443000:0.495818:0.551949:0.603069:0.643167:0.690276:0.733627:0.789000,81.500000:0.250000:0.000000:0.000000:0.000000:0.000000:0.000000:0.000000:0.000000:0.000000:0.000000:0.000000:0.000000
+prop_power_cf=0.000000:0.000000:0.250000:0.500000:0.750000:1.000000:1.250000:1.500000:1.750000:2.000000:2.250000:2.500000:2.750000:3.000000,10.000000:0.130000:0.120000:0.110000:-0.100000:-0.522000:-1.422000:-2.844000:-4.680000:-6.606000:-8.694000:-10.890000:-13.104000:-15.426000,15.000000:0.240000:0.230000:0.200000:0.095000:-0.180000:-0.650000:-1.365000:-2.535000:-3.840000:-5.265000:-6.750000:-8.280000:-9.930000,20.000000:0.310000:0.300000:0.250000:0.180000:0.065000:-0.150000:-0.500000:-1.050000:-1.812000:-2.760000:-3.816000:-4.920000:-6.132000,25.000000:0.424800:0.411600:0.370800:0.315600:0.250000:0.150000:-0.050000:-0.300000:-0.800000:-1.450000:-2.376000:-3.408000:-4.536000,30.000000:0.566400:0.561600:0.553200:0.516000:0.470400:0.416400:0.330000:0.350000:-0.055000:-0.500000:-1.150000:-1.860000:-2.820000,35.000000:0.726000:0.729600:0.703200:0.670800:0.666000:0.643200:0.600000:0.530000:0.400000:0.180000:-0.132000:-0.650000:-1.404000,40.000000:0.921600:0.903600:0.884400:0.866400:0.866400:0.840000:0.810000:0.770000:0.710000:0.620000:0.430000:0.110000:-0.324000,45.000000:1.094400:1.085000:1.080000:1.075000:1.070000:1.065000:1.060000:1.053600:1.000000:0.930000:0.800000:0.600000:0.300000,50.000000:1.270000:1.260000:1.250000:1.240000:1.230000:1.220000:1.210000:1.200000:1.170000:1.140000:1.080000:0.950000:0.792000,55.000000:1.380000:1.375000:1.370000:1.365000:1.360000:1.355000:1.350000:1.345000:1.340000:1.300000:1.260000:1.200000:1.100000,81.500000:1.510000:1.500000:1.490000:1.480000:1.470000:1.460000:1.450000:1.440000:1.430000:1.420000:1.410000:1.400000:1.390000

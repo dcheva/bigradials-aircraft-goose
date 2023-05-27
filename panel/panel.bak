@@ -1,0 +1,14 @@
+;// Panel Configuration file
+;// The BRG
+
+[VCockpit01]
+size_mm				= 320,240
+pixel_size			= 320,240
+texture				= AS530_Screen
+htmlgauge00=NavSystems/GPS/AS530/AS530.html, 0, 0, 640, 480
+
+[VCockpit02]
+size_mm=440,100
+pixel_size=440,100
+texture=Transponder_AS330_Screen
+htmlgauge00=Generic/Transponders/AS330/AS330.html, 0,0,440, 100
